@@ -1,6 +1,29 @@
-# Nuxt Minimal Starter
+# 協力会社員管理システム
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+社内管理者が協力会社員の情報・契約期間・契約手続きの進捗を一元管理し、契約更新の見落としをなくすシステムです。
+
+現在は MVP 完了後の機能追加フェーズです。現行仕様は `docs/spec/product-spec.md` を参照してください。
+
+## Database Setup
+
+Initialize the database:
+
+```bash
+npm run db:generate  # スキーマ変更時のマイグレーション生成
+npm run db:migrate   # マイグレーション実行
+```
+
+## 初期データ取込
+
+### 概要
+このシステムは、Excel ファイルから協力会社員の初期データを一括登録する機能を持っています。
+現行仕様では標準機能として扱います。
+
+### テスト
+
+```bash
+npm test  # Vitest でユニットテストを実行
+```
 
 ## Setup
 

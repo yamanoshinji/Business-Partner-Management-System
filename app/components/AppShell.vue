@@ -6,6 +6,7 @@ const navigationItems = [
   { title: '企業管理', to: '/companies' },
   { title: '担当者管理', to: '/members' },
   { title: '契約管理', to: '/contracts' },
+  { title: '初期データ取込', to: '/import' },
 ]
 
 const { user, clear } = useUserSession()

@@ -8,6 +8,13 @@
       "when": 1774794841682,
       "tag": "0000_quick_sentinel",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1774950067523,
+      "tag": "0001_open_kid_colt",
+      "breakpoints": true
     }
   ]
 }

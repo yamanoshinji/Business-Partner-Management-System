@@ -27,13 +27,26 @@ export const companies = pgTable('companies', {
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 })
 
+// 受入組織テーブル（初期データ取込用）
+export const organizations = pgTable('organizations', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  department: text('department').notNull(),
+  group: text('group').notNull(),
+  location: text('location').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+})
+
 // 担当者テーブル（仕様書 §4.2）
 export const members = pgTable('members', {
   id: uuid('id').primaryKey().defaultRandom(),
   companyId: uuid('company_id').notNull().references(() => companies.id),
+  employeeId: text('employee_id'),
   name: text('name').notNull(),
   nameKana: text('name_kana'),
   role: text('role'),
+  hireDate: date('hire_date'),
+  organizationId: uuid('organization_id').references(() => organizations.id),
   note: text('note'),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
